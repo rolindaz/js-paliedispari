@@ -1,60 +1,70 @@
-/* Palindroma
-Chiedere all’utente di inserire una parola. Creare una funzione per capire se la parola inserita è palindroma */
+/* Pari e Dispari: L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri. Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione). Dichiariamo chi ha vinto. */
 
-// Chiedere all'utente di inserire una parola
 
-// let userWord = prompt('Inserisci una parola');
+// L’utente sceglie pari o dispari
+// Creo un prompt per la scelta pari o dispari e salvo il risultato in una variabile
 
-// Creare una funzione per capire se la parola inserita è palindroma
+let userChoice = prompt('Pari o dispari?');
+console.log(userChoice);
 
-// Come capisco se una parola è palindroma? La versione normale di quella parola dev'essere uguale alla versione capovolta. Dovrò quindi creare due variabili, una con la parola normale e una con la parola capovolta.
 
-// let word = 'paprika', reversedWord = '';
+// e inserisce un numero da 1 a 5
+// Creo un prompt per inserire un numero da 1 a 5 e salvo il risultato in una variabile
 
-// La variabile della parola capovolta dev'essere ottenuta invertendo l'ordine in cui si trovano le lettere che la compongono.
+let userNumber = Number(prompt('Inserisci un numero'));
+console.log(userNumber);
 
-/* for (let i = word.length; i >= 0; i--) {
-    let currentLetter = word.charAt(i);
-    reversedWord = reversedWord + currentLetter;
-    }; */
 
-// Per verificare se la parola originaria è palindroma, devo verificare l'uguaglianza tra word e reversedWord:
+// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione)
+// Per generare un numero random posso usare la funzione vista oggi:
 
-/* if (word == reversedWord) {
-    console.log(alert('Questa parola è un palindromo!'));
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+};
+
+let pcNumber = getRandomInteger(1, 5);
+
+console.log(pcNumber);
+
+// Sommiamo i due numeri
+// Sommo la variabile derivata dal prompt al return della funzione e salvo il risultato in un'altra variabile:
+
+let sum = userNumber + pcNumber;
+
+console.log(sum);
+
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+// Devo creare un blocco condizionale:
+
+/*
+
+if (sum % 2 === 0) {
+    console.log('Pari');
 } else {
-    console.log(alert('Questa parola non è un palindromo!'));
-}; */
+    console.log('Dispari');
+}; 
 
-// Porto quindi questa logica all'interno della funzione:
+*/
 
-let reversedString = '';
+// A questo punto copio la logica nel blocco funzione:
 
-function verifyPalyndrome(string) {
-    palyndrome = 'Questa parola è un palindromo!', notPalyndrome = 'Questa parola non è un palindromo!';
-    for (let i = string.length; i >= 0; i--) {
-        let currentLetter = string.charAt(i);
-        reversedString = reversedString + currentLetter;
-    };
-    if (string == reversedString) {
-        return alert(palyndrome);
+function evenOddGame(number) {
+    if (number % 2 === 0) {
+        return 'pari';
     } else {
-        return alert(notPalyndrome);
+        return 'dispari';
     };
 };
 
-// Riporto il prompt 
+let evenOrOdd = evenOddGame(sum);
 
-let userWord = prompt('Inserisci una parola');
+console.log(evenOrOdd);
 
-// Invoco la funzione con il parametro ottenuto dal prompt
+// Dichiariamo chi ha vinto
+// Per dichiarare chi vince devo mettere in relazione l'esito della funzione con la userChoice
 
-console.log(verifyPalyndrome(userWord));
-
-
-
-
-
-
-
-/* Pari e Dispari L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto. */
+if (evenOrOdd == userChoice) {
+    console.log(alert('Hai vinto!'));
+} else {
+    console.log(alert('Hai perso!'));
+}; 
