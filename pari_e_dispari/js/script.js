@@ -26,12 +26,14 @@ let pcNumber = getRandomInteger(1, 5);
 
 console.log(pcNumber);
 
+
 // Sommiamo i due numeri
 // Sommo la variabile derivata dal prompt al return della funzione e salvo il risultato in un'altra variabile:
 
 let sum = userNumber + pcNumber;
 
 console.log(sum);
+
 
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Devo creare un blocco condizionale:
@@ -59,6 +61,7 @@ function evenOddGame(number) {
 let evenOrOdd = evenOddGame(sum);
 
 console.log(evenOrOdd);
+
 
 // Dichiariamo chi ha vinto
 // Per dichiarare chi vince devo mettere in relazione l'esito della funzione con la userChoice
